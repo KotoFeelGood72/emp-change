@@ -110,3 +110,75 @@ h2, h3, h4, h5, h6 {
 	}
 }
 
+
+// Up scroll btn
+
+.upScroll {
+	position: fixed;
+	bottom: 4rem;
+	right: 4rem;
+	z-index: 100;
+	width: 6rem;
+	height: 6rem;
+	transform: rotate(-90deg);
+	filter: invert(1);
+	mix-blend-mode: difference;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .3s ease;
+	&.visible {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&:hover {
+		.icon-arrow_scroll {
+			&:nth-child(1) {
+				left: 100%
+			}
+			&:nth-child(2) {
+				left: 0
+			}
+		}
+	}
+
+	.icon-arrow_scroll {
+		@include flex-center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: all .4s ease;
+		&:nth-child(1) {
+			width: 6rem;
+			height: 6rem;
+		}
+		&:nth-child(2) {
+			width: 6rem;
+			height: 6rem;
+			left: -100%;
+			top: auto;
+		}
+	}
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $dark;
+		// opacity: .5;
+		content: '';
+		pointer-events: none;
+		@include z-index(el);
+	}
+	a {
+		color: $white;
+		width: 100%;
+		height: 100%;
+		@include flex-center;
+		transition: all .3s ease;
+		
+	}
+}
+
+// End up scroll btn

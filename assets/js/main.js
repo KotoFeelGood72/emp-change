@@ -531,6 +531,22 @@ AOS.init({
 });
 
 
+$('.upScroll a').click(function (e) {
+	e.preventDefault()
+  $('body,html').animate({ scrollTop: 0 }, 1200);
+});
+
+$(window).scroll(function() {
+  let scrolled = $(window).scrollTop();
+  let documentHeight = $(document).height();
+  let windowHeight = $(window).height();
+
+  if(scrolled + windowHeight >= documentHeight - 1000) {
+    $('.upScroll').addClass('visible');
+  } else {
+    $('.upScroll').removeClass('visible');
+  }
+});
 
 
 
