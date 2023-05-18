@@ -346,8 +346,6 @@ const slideCard = new Swiper('.sliderCard_slider', {
 })
 
 const gallerySlider = new Swiper('.gallery_slider', {
-	loop: true,
-	// slidesPerView: 4,
 	spaceBetween: 25,
 	navigation: {
 		nextEl: '.slider_gallery_next',

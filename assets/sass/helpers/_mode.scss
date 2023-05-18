@@ -146,3 +146,8 @@ input[type="submit"], button {
 		padding-top: 4rem;
 	}
 }
+
+.swiper-button-disabled {
+	pointer-events: none!important;
+	opacity: .6;
+}
