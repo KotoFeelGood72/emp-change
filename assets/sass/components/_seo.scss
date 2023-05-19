@@ -1,0 +1,58 @@
+.seo {
+	margin-bottom: 10rem;
+}
+.seo_main {
+	padding: 5rem 0 6rem 0;
+
+
+	h2 {
+		padding: 3rem 0;
+	}
+	h3, h4, h5, h6 {
+		font-size: 3rem;
+		padding: 1rem 0;
+
+		@include bp($point_2) {
+			font-size: 2.6rem;
+		}
+	}
+
+	p, ol, div, strong {
+		padding: 1rem 0;
+		display: block;
+	}
+
+	ul {
+		padding: 2rem 0;
+		li {
+			position: relative;
+			padding-left: 2rem;
+			&:before {
+				position: absolute;
+				top: 2rem;
+				left: 0;
+				width: .5rem;
+				height: .5rem;
+				border-radius: 100%;
+				background-color: $dark;
+				content: '';
+			}
+		}
+	}
+}
+
+.more-btn {
+	&:before {
+		transform: rotate(90deg) translateX(-60%)!important;
+	}
+}
+
+.showMoreTxt  {
+	overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+	line-height: 2.6rem;
+  max-height: 35.4rem
+}

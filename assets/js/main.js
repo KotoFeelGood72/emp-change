@@ -38,65 +38,9 @@ $(window).on('load', function () {
 	modal();
 	animatedCard();
 	showMoreText();
-	// updateSizes();
-	// loadFunc();
 });
 
-// $(window).on('resize', function () {
-// 	resizeFunc();
-// });
 
-// $(window).on('scroll', function () {
-	// scrollFunc();
-// });
-
-// function loadFunc() {
-	// calcViewportHeight();
-// }
-
-// function resizeFunc() {
-// 	updateSizes();
-
-// 	calcViewportHeight();
-// }
-
-// function scrollFunc() {}
-
-// function calcViewportHeight() {
-// 	if (isMobile.apple.phone || isMobile.android.phone || isMobile.seven_inch) {
-// 		var vh = window.innerHeight * 0.01;
-// 		document.documentElement.style.setProperty('--vh', vh + 'px');
-// 	}
-// }
-
-// function updateSizes() {
-// 	windowWidth = window.innerWidth;
-// 	windowHeight = window.innerHeight;
-// }
-
-// if ('objectFit' in document.documentElement.style === false) {
-// 	document.addEventListener('DOMContentLoaded', function () {
-// 		Array.prototype.forEach.call(
-// 			document.querySelectorAll('img[data-object-fit]'),
-// 			function (image) {
-// 				(image.runtimeStyle || image.style).background =
-// 					'url("' +
-// 					image.src +
-// 					'") no-repeat 50%/' +
-// 					(image.currentStyle
-// 						? image.currentStyle['object-fit']
-// 						: image.getAttribute('data-object-fit'));
-
-// 				image.src =
-// 					"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='" +
-// 					image.width +
-// 					"' height='" +
-// 					image.height +
-// 					"'%3E%3C/svg%3E";
-// 			}
-// 		);
-// 	});
-// }
 
 function succes(success) {
 	$(success).toggleClass('active');
@@ -112,13 +56,7 @@ function failed(failed) {
 		}, 3000)
 }
 
-// function getRandomInt(min, max) {
-// 	return Math.floor(Math.random() * (max - min)) + min;
-// }
 
-// function getRandom(min, max) {
-// 	return Math.random() * (max - min) + min;
-// }
 
 var styles = ['color: red', 'background: black'].join(';');
 var message = 'Developed by KotoFeelGood Arkada-Studio https://arkada-web.ru/';
@@ -150,72 +88,6 @@ $(document).ready(function() {
 
 
 
-// const btnSubmit = document.querySelectorAll('button[type="submit"]')
-// Array.from(btnSubmit).map((item) => {
-// 	item.addEventListener('click', (e) => {
-// 		e.preventDefault();
-// 		succes('.succes')
-// 	})
-// })
-
-
-// function allDefautAnim(bottom = false, start = '-=30% center', end = 'bottom') {
-// 	const paralaxWrapper = Array.from(document.querySelectorAll('.sec_anim')).map(function(el) {
-// 		const arr = Array.from(el.querySelectorAll('.el_anim')).map(function (item, index) {
-// 			const tl = gsap.timeline();
-// 			ScrollTrigger.create({
-// 				animation: tl,
-// 				trigger: el,
-// 				start: start,
-// 				end: end,
-// 				ease: 'none',
-// 			})
-// 			tl.fromTo(item, {
-// 				y: 100, 
-// 				duration: .4,
-// 				autoAlpha: 0,
-// 			}, {
-// 				y: 0,
-// 				autoAlpha: 1,
-// 				delay: 0.1 + (0.1 * index),
-// 			});
-// 		});
-// 	});
-// }
-
-// function popupForms(pr) {
-
-// 	let popupForms = document.querySelector('.callback')
-// 	let popupFormsTrigger = document.querySelectorAll('.btn_popup')
-// 	let popupFormsClose = document.querySelectorAll('.remove_popup')
-// 	let popupFormsSubmit = popupForms.querySelector('button[type="submit"]')
-// 	const burgerPopup = document.querySelector('.burger')
-	
-// 	Array.from(popupFormsTrigger).map((item) => {
-// 		item.addEventListener('click', () => {
-// 			popupForms.classList.add('active');
-// 			win.style.overflow = "hidden";
-// 			win.style.paddingRight = pr; 
-// 			burgerPopup.classList.remove('active')
-// 		})
-// 	})
-
-
-// 	Array.from(popupFormsClose).map((item) => {
-// 		item.addEventListener('click', () => {
-// 			popupForms.classList.remove('active')
-// 			win.style.overflow = "";
-// 			win.style.paddingRight = ""; 
-// 		})
-// 	})
-
-// 	popupFormsSubmit.addEventListener('click', () => {
-// 		popupForms.classList.remove('active')
-// 		win.style.overflow = "";
-// 		win.style.paddingRight = ""; 
-// 		succes('.succes')
-// 	})
-// }
 
 
 
@@ -510,9 +382,17 @@ function showMoreText() {
 		showMoreBtn.addEventListener('click', function() {
 			showMoreTxt.classList.toggle('visible')
 			if (showMoreTxt.classList.contains('visible')) {
-        this.innerHTML = 'Скрыть';
+        this.innerHTML = `
+				<div class="btn dark more-btn showMoreBtn">
+						<button class="trigger" type="button">Скрыть</button>
+					</div>
+				`;
       } else {
-        this.innerHTML = 'Показать больше';
+        this.innerHTML = `
+				<div class="btn dark more-btn showMoreBtn">
+					<button class="trigger" type="button">Показать больше</button>
+				</div>
+				`;
       }
 		})
 	})
@@ -545,6 +425,7 @@ $(window).scroll(function() {
     $('.upScroll').removeClass('visible');
   }
 });
+
 
 
 
